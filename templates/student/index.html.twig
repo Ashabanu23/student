@@ -1,0 +1,40 @@
+{# templates/student/index.html.twig #} {% extends 'base.html.twig' %} {% block
+body %}
+  
+ 
+ 
+
+	<div class="container">
+    
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light mb-3 mt-3">
+        <div class="card-body">
+          <div class="card-header">Menu Card of your choice </div>
+          <AmpContent>
+          <table class="table">
+            <tr>
+              <th>ID</th>
+              <th>Category</th>
+            </tr>
+            {% for key, item in categories %}
+			
+            <tr>
+              <td>{{ categories.id }}</td>
+			  <td>{{ categories.name }}</td>
+             
+            </tr>
+            {% endfor %}
+          </table>
+          
+</NonAmpContent>
+        </div>
+      </div>
+      <AmpContent>
+   
+      
+</NonAmpContent>
+    </div>
+  </div>
+</div>
+{% endblock %}

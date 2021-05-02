@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entity index{% endblock %}
+
+{% block body %}
+   
+
+	<div class="container">
+    
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light mb-3 mt-3">
+        <div class="card-body">
+          <div class="card-header"><img src="/student/public/img/food-item.png" width="50px" height="50px" /><span style="color:blue; font-size:25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main Menu - Food Items</span></div>
+          <AmpContent>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qty</th>
+				<th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.price }}</td>
+                <td>{{ entity.qty }}</td>
+				
+				
+                <td>
+                    <a href="{{ path('entity_show', {'id': entity.id}) }}">&nbsp;Show&nbsp;</a> |
+                    <a href="{{ path('entity_edit', {'id': entity.id}) }}">&nbsp;Edit&nbsp;</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('entity_new') }}"><< Create food item >></a>
+	<br>
+	<a href="/student/public/index.php"><< Home >> </a>
+	</NonAmpContent>
+        </div>
+      </div>
+      <AmpContent>
+   
+      
+</NonAmpContent>
+    </div>
+  </div>
+</div>
+{% endblock %}

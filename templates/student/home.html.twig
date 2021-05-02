@@ -1,0 +1,40 @@
+{# templates/student/index.html.twig #} {% extends 'base.html.twig' %} {% block
+body %}
+  
+ 
+ 
+
+	<div class="container">
+    
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light mb-3 mt-3">
+        <div class="card-body">
+          <div class="card-header"><img src="/student/public/img/images.png" width="50px" height="50px" /><span style="color:blue; font-size:25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Online Food Ordering System</span></div>
+          <AmpContent>
+          <table class="table">
+            <tr>
+               <th><img src="/student/public/img/menu.jpg" width="185px" height="200px" /></th>
+			   <th><a href="/student/public/index.php/category">Create Food Category</a></th>
+			</tr>
+            <tr>
+               <th><img src="/student/public/img/food.jpg" width="185px" height="200px" /></th>
+			   <th><a href="/student/public/index.php/entity">Create Food Types</th>
+            </tr>
+              
+             
+            
+          
+          </table>
+          
+</NonAmpContent>
+        </div>
+      </div>
+      <AmpContent>
+   
+      
+</NonAmpContent>
+    </div>
+  </div>
+</div>
+{% endblock %}
