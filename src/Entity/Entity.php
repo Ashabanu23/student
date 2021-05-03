@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use App\Repository\EntityRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -34,7 +35,7 @@ class Entity
      */
     private $qty;
 
-     /**
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="entities")
      */
     private $category;

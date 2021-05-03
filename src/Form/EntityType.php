@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+
 use App\Entity\Entity;
 use App\Entity\Category;
 use App\Form\CategoryType;
@@ -34,25 +35,26 @@ class EntityType extends AbstractType
     {
 	    
 		$category = $this->categoryRepository->findAllCategory();
-		$arrdata = array_column($category, 'name', 'id');
+		//$arrdata = array_column($category, 'name', 'id');
        
-		$choices = array_flip($arrdata);
-	
+	    
+		//$choices = array_flip($arrdata);
+	    // print_r($choices);
+		// exit;
 	
         $builder
             ->add('name')
             ->add('price')
             ->add('qty')
 			->add('category', ChoiceType::class, 
-			    array('choices'=> $category,
-			          //'choice_label' => function ($choices, $key, $value) {return $key;},
-			   ))
-			/*->add('category', ChoiceType::class, 
-			    array('choices'=> $choices,
-				'choices_as_values' => true,))
-			*/
-			   
-	    ;	
+			    array(
+				       'choices'=> $category,
+					   'choice_value' => 'name',
+					   'choice_label' => function(?Category $category) {
+                                         return $category ? strtoupper($category->getName()) : '';
+                                        },
+					))
+			;	
 	}
 	
     /**

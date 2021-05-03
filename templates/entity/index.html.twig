@@ -20,6 +20,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Qty</th>
+				<th>Category</th>
 				<th>actions</th>
             </tr>
         </thead>
@@ -30,7 +31,7 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.price }}</td>
                 <td>{{ entity.qty }}</td>
-				
+				<td>{{ entity.category.name}}</td>
 				
                 <td>
                     <a href="{{ path('entity_show', {'id': entity.id}) }}">&nbsp;Show&nbsp;</a> |

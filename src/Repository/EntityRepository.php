@@ -19,6 +19,16 @@ class EntityRepository extends ServiceEntityRepository
         parent::__construct($registry, Entity::class);
     }
 
+	
+	/*SELECT question_text, answer_text FROM `question` left join result on question.id = result.question_id and user_id=10
+	 
+	SELECT q.question_title, r.answer_text
+    FROM AppBundle:Question q
+    LEFT JOIN AppBundle:Result r 
+    WITH q.id = r.question AND r.user = :user*/
+
+	
+	
 	public function findOneByIdJoinedToCategory(int $entityId): ?Entity
     {
         $entityManager = $this->getEntityManager();

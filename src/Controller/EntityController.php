@@ -21,11 +21,15 @@ class EntityController extends AbstractController
      */
     public function index(EntityRepository $entityRepository): Response
     {
-        //$category = new Category();
+        
+		$entity = $entityRepository->findAll();
+		
+		
 		return $this->render('entity/index.html.twig', [
-            'entities' => $entityRepository->findAll(),
+            'entities' => $entity,
         ]);
-    }
+		
+	}
 
     /**
      * @Route("/new", name="entity_new", methods={"GET","POST"})
@@ -58,13 +62,14 @@ class EntityController extends AbstractController
     /**
      * @Route("/{id}", name="entity_show", methods={"GET"})
      */
-    public function show(Entity $entity): Response
+    
+	public function show(Entity $entity): Response
     {
-        return $this->render('entity/show.html.twig', [
+       return $this->render('entity/show.html.twig', [
             'entity' => $entity,
-        ]);
-    }
-
+			]);
+	} 
+	
     /**
      * @Route("/{id}/edit", name="entity_edit", methods={"GET","POST"})
      */
