@@ -25,6 +25,14 @@ class Category
      */
     private $name;
     
+	/**
+    * @ORM\Column(type="string")
+    
+    */
+
+	private $image;
+
+   
 	 /**
      * @ORM\OneToMany(targetEntity="App\Entity\Entity", mappedBy="category")
      */
@@ -60,5 +68,17 @@ class Category
         $this->name = $name;
 
         return $this;
+    }
+	
+	public function getImage()
+    {
+    return $this->image;
+    }
+
+    public function setImage($image)
+    {
+    $this->image = $image;
+
+    return $this;
     }
 }
